@@ -6,8 +6,8 @@
             </tr>
             <tr v-for="row in rows" :key="row.CNPJ">
                 <td v-for="col in showedCols" :key="col">{{ row[col] }}</td>
-                <td class="config-row">
-                    <button class="edit-btn" @click="$emit('edit-row', row)">
+                <td class="config-row" v-if="showedCols.length > 0">
+                    <button class="edit-btn" @click="editrow(row)/*;*/">
                         <img src="@/assets/icons/edit.svg" alt="Adicionar" />
                     </button>
                     <button class="delete-btn" @click="deleterow(row['Registro ANS'])">
@@ -28,6 +28,13 @@ export default {
     methods: {
         deleterow(ans_record) {
             this.$emit("delete-row", ans_record);
+        },
+        editrow(row) {
+            const rowToEdit = {}
+
+            Object.keys(row).forEach(key => rowToEdit[key] = row[key]);
+
+            this.$emit('edit-row', rowToEdit);
         }
     }
 }
@@ -74,6 +81,7 @@ td, th {
 }
 
 .config-row {
+    min-width: 76px;
     width: 76px;
     padding: 0 5px;
     border: none;

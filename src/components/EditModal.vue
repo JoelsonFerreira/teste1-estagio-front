@@ -13,127 +13,22 @@
                 </button>
             </header>
             <form>
-                <input 
-                    name='Razão Social'        
-                    placeholder='Razão Social'        
-                    id="razsocial"      
-                    style="width: 100%;"                    
-                    v-model="row['Razão Social']"
-                />
-                <input 
-                    name='Nome Fantasia'       
-                    placeholder='Nome Fantasia'       
-                    id="nomefantasia"   
-                    style="width: 100%;"                    
-                    v-model="row['Nome Fantasia']"
-                />
-                <input 
-                    name='Modalidade'          
-                    placeholder='Modalidade'          
-                    id="modalidade"  
-                    v-model="row['Modalidade']"
-                />
-                <input 
-                    name='CEP'                 
-                    placeholder='CEP'                 
-                    id="cep"            
-                    @blur="getLocate($event)"  
-                    v-model="row['CEP']"
-                />
-                <input 
-                    name='UF'                  
-                    placeholder='UF'                  
-                    id="uf"             
-                    style="width: 90px;"  
-                    v-model="row['UF']"
-                />
-                <input 
-                    name='Cidade'              
-                    placeholder='Cidade'              
-                    id="cidade"         
-                    style="width: 185px;"  
-                    v-model="row['Cidade']"
-                />
-                <input 
-                    name='Bairro'              
-                    placeholder='Bairro'              
-                    id="bairro"         
-                    style="width: 185px;"  
-                    v-model="row['Bairro']"
-                />
-                <input 
-                    name='Logradouro'          
-                    placeholder='Logradouro'          
-                    id="logradouro"     
-                    style="width: 100%;"  
-                    v-model="row['Logradouro']"
-                />
-                <input 
-                    name='Número'              
-                    placeholder='nº'                  
-                    id="numero"         
-                    style="width: 90px;"    
-                    type="number"  
-                    v-model="row['Número']"
-                />
-                <input 
-                    name='Complemento'         
-                    placeholder='Complemento'         
-                    id="complemento"    
-                    style="width: 380px;" 
-                    v-model="row['Complemento']"
-                />
-                <input 
-                    name='DDD'                 
-                    placeholder='DDD'                 
-                    id="ddd"            
-                    style="width: 90px;"    
-                    type="number"  
-                    v-model="row['DDD']"
-                />
-                <input 
-                    name='Telefone'            
-                    placeholder='Telefone'            
-                    id="telefone"       
-                    style="width: 185px;"   type="tel"  
-                    v-model="row['Telefone']"
-                />
-                <input 
-                    name='Fax'                 
-                    placeholder='Fax'                 
-                    id="fax"            
-                    style="width: 185px;"  
-                    v-model="row['Fax']"
-                />
-                <input 
-                    name='Endereço eletrônico' 
-                    placeholder='Endereço eletrônico' 
-                    id="email"          
-                    style="width: 100%;"    
-                    type="email"  
-                    v-model="row['Endereço eletrônico']"
-                />
-                <input 
-                    name='Representante'       
-                    placeholder='Representante'       
-                    id="representante"  
-                    style="width: 100%;"  
-                    v-model="row['Representante']"
-                />
-                <input 
-                    name='Cargo Representante' 
-                    placeholder='Cargo Representante' 
-                    id="carrepresentante"  
-                    v-model="row['Cargo Representante']"
-                />
-                <input 
-                    name='Data Registro ANS'   
-                    placeholder='Data Registro ANS'   
-                    id="dataregistro"                           
-                    type="date"  
-                    v-model="row['Data Registro ANS']"
-                />
-            </form> 
+                <input name='Razão Social'  placeholder='Razão Social'  id="razsocial"      style="width: 100%;" v-model="row['Razão Social']"/>
+                <input name='Nome Fantasia' placeholder='Nome Fantasia' id="nomefantasia"   style="width: 100%;" v-model="row['Nome Fantasia']"/>
+                <input name='Modalidade'    placeholder='Modalidade'    id="modalidade" v-model="row['Modalidade']"/>
+                <input name='CEP'           placeholder='CEP'           id="cep" @blur="getLocate($event)"  v-model="row['CEP']"/>
+                <input name='UF'            placeholder='UF'            id="uf"          style="width: 90px;"  v-model="row['UF']"/>
+                <input name='Cidade'        placeholder='Cidade'        id="cidade"      style="width: 185px;"  v-model="row['Cidade']"/>
+                <input name='Bairro'        placeholder='Bairro'        id="bairro"      style="width: 185px;"  v-model="row['Bairro']"/>
+                <input name='Logradouro'    placeholder='Logradouro'    id="logradouro"  style="width: 100%;"  v-model="row['Logradouro']"/>
+                <input name='Número'        placeholder='nº'            id="numero"      style="width: 90px;"    type="number"  v-model="row['Número']" />
+                <input name='Complemento'   placeholder='Complemento'   id="complemento" style="width: 380px;" v-model="row['Complemento']"/>
+                <input name='DDD'           placeholder='DDD'           id="ddd"         style="width: 90px;" type="number"  v-model="row['DDD']" />
+                <input name='Telefone'      placeholder='Telefone'      id="telefone"    style="width: 185px;"   type="tel"  v-model="row['Telefone']"/>
+                <input name='Fax'           placeholder='Fax'           id="fax"         style="width: 185px;"  v-model="row['Fax']"/>
+                <input name='Endereço eletrônico'   placeholder='Endereço eletrônico' id="email"            style="width: 100%;"    type="email"  v-model="row['Endereço eletrônico']" />
+                <input name='Representante'         placeholder='Representante'       id="representante"    style="width: 100%;"  v-model="row['Representante']"/>
+                <input name='Cargo Representante'   placeholder='Cargo Representante' id="carrepresentante" v-model="row['Cargo Representante']"/><input name='Data Registro ANS' placeholder='Data Registro ANS' id="dataregistro" type="date"  v-model="row['Data Registro ANS']" />            </form> 
             <footer>
                 <button @click="hide">
                     Cancelar
@@ -177,12 +72,7 @@ export default {
             
             const inputList = this.$el.querySelectorAll("form input");
 
-            this.$el.querySelector("#ans").style.border = "1px solid #ddd";
-            this.$el.querySelector("#cnpj").style.border = "1px solid #ddd";
-
-            for(const index in inputList) {
-                inputList[index].value = "";
-            }
+            inputList.forEach(input => input.value = "");
         },
         getLocate(event) {
             axios.get(`http://viacep.com.br/ws/${event.target.value}/json/unicode/`).then(res => {
@@ -200,28 +90,19 @@ export default {
 
             form["Registro ANS"] = this.row["Registro ANS"];
             form["CNPJ"]         = this.row["CNPJ"];
-            
-            form["Razão Social"]        = this.$el.querySelector("#razsocial").value;
-            form["Nome Fantasia"]       = this.$el.querySelector("#nomefantasia").value;
-            form["Modalidad"]           = this.$el.querySelector("#modalidade").value;
-            form["CEP"]                 = this.$el.querySelector("#cep").value;
-            form["UF"]                  = this.$el.querySelector("#uf").value;
-            form["Cidade"]              = this.$el.querySelector("#cidade").value;
-            form["Bairro"]              = this.$el.querySelector("#bairro").value;
-            form["Logradouro"]          = this.$el.querySelector("#logradouro").value;
-            form["Número"]              = this.$el.querySelector("#numero").value;
-            form["Complemento"]         = this.$el.querySelector("#complemento").value;
-            form["DDD"]                 = this.$el.querySelector("#ddd").value;
-            form["Telefone"]            = this.$el.querySelector("#telefone").value;
-            form["Fax"]                 = this.$el.querySelector("#fax").value;
-            form["Endereço eletrônico"] = this.$el.querySelector("#email").value;
-            form["Representante"]       = this.$el.querySelector("#representante").value;
-            form["Cargo Representante"] = this.$el.querySelector("#carrepresentante").value;
-            form["Data Registro ANS"]   = this.$el.querySelector("#dataregistro").value;
 
+            const inputList = this.$el.querySelectorAll("form input");
 
-            axios.post("http://localhost:5000/editrow", form).then(() => {
+            inputList.forEach(input => form[input.name] = input.value);
+
+            axios.put(`http://localhost:5000/editrow/${form["Registro ANS"]}`, form).then(res => {
                 this.hide();
+                if(res.data["success"]) {
+                    this.$emit("update-row", { ans_record: form["Registro ANS"], row: form});
+                } else {
+                    alert("Algo deu errado");
+                    console.log(res.data["message"]);
+                }
             });
         }
     }

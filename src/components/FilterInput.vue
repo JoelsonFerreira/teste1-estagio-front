@@ -1,5 +1,5 @@
 <template>
-    <div class="seach-container">
+    <div class="search-container">
         <input 
             type="search" 
             placeholder="Digite o texto de busca" 
@@ -48,16 +48,21 @@ export default {
 </script>
 
 <style scoped>
-.seach-container {
+.search-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 900px;
 }
 
 input,
 select {
     height: 40px;
     padding: 10px 20px;
+    width: 100%;
+    max-width: 250px;
     border-radius: 4px;
     border: 1px solid #ddd;
     outline: none;
@@ -87,6 +92,13 @@ button p {
 
 option {
     font-size: 16px;
+}
+
+@media (max-width: 1260px) {
+    .search-container {
+        max-width: 100%;
+        justify-content: center;
+    }
 }
 
 </style>

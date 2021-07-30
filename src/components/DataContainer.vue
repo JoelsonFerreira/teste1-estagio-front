@@ -15,7 +15,7 @@
             </button>
         </footer>
         <FormModal :showed="isVisibleForm" @hide-modal="isVisibleForm = false" />
-        <EditModal :showed="isVisibleEdit" @hide-modal="isVisibleEdit = false" :currow="rowToEdit" />
+        <EditModal :showed="isVisibleEdit" @hide-modal="isVisibleEdit = false" :currow="rowToEdit" @update-row="updateRow" />
         <ConfirmationModal :showed="isVisibleConf" @hide-modal="isVisibleConf = false" @delete-row="confirmDelete" />
     </div>
 </template>
@@ -89,9 +89,14 @@ export default {
                 }
             });
         },
-        showEditMenu(row) {
-            this.rowToEdit = row;
+        showEditMenu(row) {            
+            Object.keys(row).forEach(key => this.rowToEdit[key] = row[key]);
+
             this.isVisibleEdit = true;
+        },
+        updateRow({ ans_record, row }) {
+            const index = this.rows.findIndex(row => row["Registro ANS"] == ans_record);
+            if(index !== -1) this.rows[index] = row;
         }
     }
 }
@@ -121,6 +126,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap-reverse;
 }
 
 

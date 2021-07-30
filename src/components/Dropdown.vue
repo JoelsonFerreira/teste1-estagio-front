@@ -5,6 +5,10 @@
             <img src="@/assets/icons/expand_more.svg" alt="Expandir" />
         </button>
         <div class="columns" v-bind:style="dropdownStyle">
+            <label>
+                Marcar todos
+                <input type="checkbox" v-bind:value="col" v-on:change="addAll($event)">
+            </label>
             <label v-for="col in cols" :key="col">
                 {{ col }}
                 <input 
@@ -33,6 +37,25 @@ export default {
         },
         addCol(event) {
             this.$emit("add-col", event.target.value);
+        },
+        addAll(event) {
+            if(event.target.checked) {
+                this.cols.forEach(col => {
+                    const input = this.$el.querySelector(`input[value='${col}']`);
+                    if(!input.checked) {
+                        this.$el.querySelector(`input[value='${col}']`).checked = true;
+                        this.$emit("add-col", col);
+                    }
+                });
+            } else {
+                this.cols.forEach(col => {
+                    const input = this.$el.querySelector(`input[value='${col}']`);
+                    if(input.checked) {
+                        this.$el.querySelector(`input[value='${col}']`).checked = false;
+                        this.$emit("add-col", col);
+                    }
+                });
+            }
         }
     }
 }

@@ -6,7 +6,7 @@
             :key="index"
         >
             {{ Object.keys(filter)[0] }}: {{ filter[Object.keys(filter)[0]] }}
-            <button @click="$emit('remove-filter', filter)/*removeFilter(filter)*/">
+            <button @click="$emit('remove-filter', filter)">
                 <img 
                     src="@/assets/icons/close.svg" 
                     alt="Buscar" 
